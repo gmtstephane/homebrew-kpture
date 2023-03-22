@@ -5,21 +5,21 @@
 class Kpture < Formula
   desc "kubernetes packet capture tool"
   homepage "https://github.com/gmtstephane/kpture"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.2/kpture_Darwin_x86_64.tar.gz"
-      sha256 "4bfd3ac7ecc577f6c977359e44259ab490c16777766e1d5dd9a2d4ae8964f999"
+    if Hardware::CPU.arm?
+      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.3/kpture_Darwin_arm64.tar.gz"
+      sha256 "063874c72445b4b71ac9139deacc0331444957155c3e452760e1f45fb005bd80"
 
       def install
         bin.install "kpture"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.2/kpture_Darwin_arm64.tar.gz"
-      sha256 "71604d1bebab42584f259f505470e72a39948c779edf1e046aa50eae51bab4b7"
+    if Hardware::CPU.intel?
+      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.3/kpture_Darwin_x86_64.tar.gz"
+      sha256 "4c2504037ce91f0c348ae4d90ec40316da209c3e91acca69583472a4fc4c5d4c"
 
       def install
         bin.install "kpture"
@@ -29,16 +29,16 @@ class Kpture < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.2/kpture_Linux_arm64.tar.gz"
-      sha256 "09da5762afaf10f689c24c89d77fa6b7468ec4e282823238261f12b669b4d368"
+      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.3/kpture_Linux_arm64.tar.gz"
+      sha256 "06d34bd6861432c3ce3af49d7c8fb13b77eef0f56c25f033150e6b4f0c15088a"
 
       def install
         bin.install "kpture"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.2/kpture_Linux_x86_64.tar.gz"
-      sha256 "1c56e58fc55ef3f387066510e2b93e2eff0d3735304a95f67db1d867ca2e56fd"
+      url "https://github.com/gmtstephane/kpture/releases/download/v0.0.3/kpture_Linux_x86_64.tar.gz"
+      sha256 "66a529783d322617c0157a2a3d24793ae0d40638b4460d03fb6b2de9e048a74a"
 
       def install
         bin.install "kpture"
